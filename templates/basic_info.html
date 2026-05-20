@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Basic Info — FAIR Questionnaire{% endblock %}
+{% block page_title %}Basic Information{% endblock %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('basic_info') }}">
+    Rater 1
+    <select name="rater1">
+        {% for r in raters %}
+            <option value="{{r}}">{{r}}</option>
+        {% endfor %}
+    </select>
+
+    Rater 2
+    <select name="rater1">
+        {% for r in raters %}
+            <option value="{{r}}">{{r}}</option>
+        {% endfor %}
+    </select>
+
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+
+  <button type="submit">Next</button>
+</form>
+{% endblock %}
