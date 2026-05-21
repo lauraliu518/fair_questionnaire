@@ -4,26 +4,73 @@
 {% block page_title %}Basic Information{% endblock %}
 
 {% block content %}
-<form method="POST" action="{{ url_for('basic_info') }}">
-    Rater 1
-    <select name="rater1">
-        {% for r in raters %}
-            <option value="{{r}}">{{r}}</option>
-        {% endfor %}
-    </select>
+<form id="basic-info-form">
 
-    Rater 2
-    <select name="rater1">
-        {% for r in raters %}
-            <option value="{{r}}">{{r}}</option>
-        {% endfor %}
-    </select>
+    <div class="form-group">
+        <label class="question-label" for="rater1">Rater 1</label>
+        <select id="rater1" name="rater1" required>
+            {% for r in raters %}
+                <option value="{{r}}">{{r}}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-  <div class="form-group">
-    <label for="date">Date</label>
-    <input type="date" id="date" name="date" required>
-  </div>
+    <div class="form-group">
+        <label class="question-label" for="rater2">Rater 2</label>
+        <select id="rater2" name="rater2" required>
+            {% for r in raters %}
+                <option value="{{r}}">{{r}}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-  <button type="submit">Next</button>
+    <div class="form-group">
+        <label class="question-label" for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+    </div>
+
+    <div class="form-group">
+        <label class="question-label" for="site">Site</label>
+        <select id="site" name="site" required>
+            {% for s in sites %}
+                <option value="{{s}}">{{s}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="question-label" for="case_number">Case/Incident Number</label>
+        <p class="field-hint">Please enter the last three digits of the case number</p>
+        <input type="text" id="case_number" name="case_number" maxlength="3" required>
+    </div>
+
+    <button class="next-btn" type="submit">Next</button>
 </form>
+
+<script>
+    //Check and restore previous progess
+    const saved = localStorage.getItem('basic_info');
+    if (saved) {
+        const fields = JSON.parse(saved);
+        document.getElementById('rater1').value = fields.rater1;
+        document.getElementById('rater2').value = fields.rater2;
+        document.getElementById('date').value = fields.date;
+        document.getElementById('site').value = fields.site;
+        document.getElementById('case_number').value = fields.case_number;
+    }
+
+    //Store current progess and redirect to new page on submit
+    document.getElementById('basic-info-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fields = {
+        rater1:      document.getElementById('rater1').value.trim(),
+        rater2:      document.getElementById('rater2').value.trim(),
+        date:        document.getElementById('date').value.trim(),
+        site:        document.getElementById('site').value.trim(),
+        case_number: document.getElementById('case_number').value.trim(),
+        };
+        localStorage.setItem('basic_info', JSON.stringify(fields));
+        window.location.href = '/maltreatment-category';
+    });
+</script>
 {% endblock %}
