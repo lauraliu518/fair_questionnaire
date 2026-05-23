@@ -14,6 +14,11 @@ def basic_info():
 def maltreatment_category():
     return render_template('maltreatement_category.html')
 
+@app.route('/confirmation')
+def confirmation():
+    return render_template('confirmation.html')
+
+
 
 
 if __name__ == '__main__':
