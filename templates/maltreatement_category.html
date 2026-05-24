@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Maltreatment Category — FAIR Questionnaire{% endblock %}
+{% block page_title %}Maltreatment Category{% endblock %}
+
+{% block content %}
+<form id="maltreatment-category-form">
+    <div class="form-group">
+        <label class="question-label">Type of Maltreatment</label>
+         <select id="maltreatment-type" name="maltreatment-type" required>
+            {% for type in maltreatment_types %}
+                <option value="{{type}}">{{type}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="button-group">
+        <button id="btn-back" class="back-btn" type="button">Back</button>
+        <button class="next-btn" type="submit">Next</button>
+    </div>
+</form>
+
+<script>
+    const saved = localStorage.getItem('maltreatment_category');
+    if (saved) {
+        const fields = JSON.parse(saved);
+        document.getElementById('maltreatment-type').value = fields.maltreatment_type;
+    }
+
+    function saveAndNavigate(destination) {
+        const maltreatmentType = document.getElementById('maltreatment-type').value;
+
+        // Always save current progress
+        localStorage.setItem('maltreatment_category', JSON.stringify({
+            maltreatment_type: maltreatmentType
+        }));
+
+        if (destination === 'next') {
+            window.location.href = '/medical-form';
+        } else {
+            window.location.href = '/';
+        }
+    }
+
+    document.getElementById('maltreatment-category-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        saveAndNavigate('next');
+    });
+
+    document.getElementById('btn-back').addEventListener('click', function () {
+        saveAndNavigate('prev');
+    });
+</script>
+{% endblock %}

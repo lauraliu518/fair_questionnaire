@@ -115,7 +115,13 @@ textarea:focus {
 
 textarea { resize: vertical; min-height: 80px; }
 
-.next-btn {
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.next-btn, .back-btn {
   display: block;
   margin-top: 32px;
   margin-left: 0;
@@ -129,7 +135,7 @@ textarea { resize: vertical; min-height: 80px; }
   cursor: pointer;
 }
 
-.next-btn:hover { background: #3d0463; }
+.next-btn:hover, .back-btn:hover { background: #3d0463; }
 
 form {
   margin: 50px;
