@@ -15,6 +15,11 @@ def basic_info():
 def maltreatment_category():
     return render_template('maltreatement_category.html', maltreatment_types=maltreatment_types)
 
+@app.route('/confirmation')
+def confirmation():
+    return render_template('confirmation.html')
+
+
 @app.route('/medical-form')
 def medical_form():
     return render_template('medical_form.html')
