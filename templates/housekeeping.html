@@ -1,48 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Housekeeping</title>
-    </head>
-    <body>
-        
-        <div id="hardCase">
-            <label for="hardCase" style="display: block; margin-bottom: 8px;">Did you have a difficult time voting on this case?</label>
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="hardCaseYes" name="hardCase" value="yes" onclick="document.getElementById('whyHardCase').style.display='block'"> Yes
-            </div>
+{% extends "base.html" %}
 
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="hardCaseNo" name="hardCase" value="no" onclick="document.getElementById('whyHardCase').style.display='none'"> No
-            </div>
-        </div>
+{% block title %}Housekeeping — FAIR Questionnaire{% endblock %}
+{% block page_title %}Housekeeping{% endblock %}
 
-        <div id="whyHardCase" style="display:none; margin-top: 12px;">
-            <label style="display: block; margin-bottom: 8px;">Why was this vote difficult?</label>
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="why1" name="whyHardCase" value="yes"> Not enough information
-            </div>
-        
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="why2" name="whyHardCase" value="no"> Credibility unclear
-            </div>
+{% block content %}
+<form id="housekeeping-form">
+<div id="hardCase" class="form-group">
+    <label for="hardCase" class="question-label">Did you have a difficult time voting on this case?</label>
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="hardCaseYes" name="hardCase" value="yes" onclick="document.getElementById('whyHardCase').style.display='block'"> Yes
+    </div>
 
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="why2" name="whyHardCase" value="no"> Other
-            </div>
-            <input type="text" id="otherText" name="other" style="display: block; margin-bottom: 8px;">
-        </div>
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="hardCaseNo" name="hardCase" value="no" onclick="document.getElementById('whyHardCase').style.display='none'"> No
+    </div>
+</div>
 
-        <div id="medicalProvider">
-            <label for="medicalProvider" style="display: block; margin-bottom: 8px;">Did you have a difficult time voting on this case?</label>
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="medicalProviderYes" name="medicalProvider" value="yes"> Yes
-            </div>
+<div id="whyHardCase" class="form-group" style="display: none;">
+    <label class="question-label">Why was this vote difficult?</label>
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="why1" name="whyHardCase" value="yes"> Not enough information
+    </div>
 
-            <div style="display: block; margin-bottom: 4px;">
-                <input type="radio" id="medicalProviderNo" name="medicalProvider" value="no"> No
-            </div>
-        </div>
-        <button style="position: fixed; bottom: 20px; right: 20px">--></button>
-    </body>
-</html>
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="why2" name="whyHardCase" value="no"> Credibility unclear
+    </div>
+
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="why2" name="whyHardCase" value="no"> Other
+    </div>
+    <input type="text" id="otherText" name="other" style="display: block; margin-bottom: 8px;">
+</div>
+
+<div id="medicalProvider" class="form-group">
+    <label for="medicalProvider" class="question-label">Was there a medical provider on committee?</label>
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="medicalProviderYes" name="medicalProvider" value="yes"> Yes
+    </div>
+
+    <div style="display: block; margin-bottom: 4px;">
+        <input type="radio" id="medicalProviderNo" name="medicalProvider" value="no"> No
+    </div>
+</div>
+<div class="button-group">
+        <button id="btn-back" class="back-btn" type="button">Back</button>
+        <button class="next-btn" type="submit">Next</button>
+</div>
+
+{% endblock %}

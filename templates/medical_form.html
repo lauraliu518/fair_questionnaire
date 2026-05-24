@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Medical Form — FAIR Questionnaire{% endblock %}
+{% block page_title %}Medical Form{% endblock %}
+
+{% block content %}
+<form id="medical-form">
+    <p>Populate with correct form depending on stored maltreatment type</p>
+    <div class="button-group">
+    <button id="btn-back" class="back-btn" type="button">Back</button>
+    <button class="next-btn" type="submit">Next</button>
+    </div>
+</form>
+
+<script>
+    // pull answers from local storage
+
+    function saveAndNavigate(destination) {
+
+        // save current answers
+
+        if (destination === 'next') {
+            window.location.href = '/housekeeping';
+        } else {
+            window.location.href = '/maltreatment-category';
+        }
+    }
+
+    document.getElementById('medical-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        saveAndNavigate('next');
+    });
+
+    document.getElementById('btn-back').addEventListener('click', function () {
+        saveAndNavigate('prev');
+    });
+</script>
+{% endblock %}
