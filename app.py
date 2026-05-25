@@ -27,6 +27,11 @@ def basic_info():
 def maltreatment_category():
     return render_template('maltreatement_category.html', maltreatment_types=maltreatment_types, maltreatment_type_ids=maltreatment_type_ids)
 
+@app.route('/confirmation')
+def confirmation():
+    return render_template('confirmation.html')
+
+
 @app.route('/medical-form')
 def medical_form():
     maltreatment_type_id = request.args.get('type')  # or pull from session
