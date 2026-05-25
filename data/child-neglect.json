@@ -1,0 +1,371 @@
+{
+  "form_title": "Child Neglect",
+  "type_of_maltreatment": "Child Neglect",
+  "definition": "",
+  "criteria": [
+    {
+      "id": "A",
+      "label": "A",
+      "description": "Egregious act(s) or omissions(s) on the part of the child's caregiver that deprives the child of needed age-appropriate care. Acts including any of the following:",
+      "elements": [
+        {
+          "id": "A.1",
+          "label": "1",
+          "description": "Abandonment: The caregiver is absent and does not intend to return or is away from home for more than 24 hours without having arranged for an appropriate surrogate caregiver. NO IMPACT (“B”) CRITERION IS NECESSARY FOR ABANDONMENT TO BE DEEMED NEGLECT."
+        },
+        {
+          "id": "A.2",
+          "label": "2",
+          "description": "Lack of supervision: Egregious absence or inattention. Child's age and level of functioning should be considered in making determination about level of supervision required. Note: Leaving children ten or older unattended in a vehicle for brief periods of time in a safe area DOES NOT meet this criterion."
+        },
+        {
+          "id": "A.3",
+          "label": "3",
+          "description": "Exposure to physical hazards: Inattention to child's safety by exposing child to physical dangers (including, but not limited to, exposed wiring; broken glass; non-secured, loaded firearms in home; illegal drugs in home; dangerous or unhygienic pets, child exposure to domestic violence); asking child to perform dangerous activities; driving while intoxicated with child in vehicle, hazardous chemicals, unhygienic living conditions dangerous to health; caregivers known to be abusive or neglectful; domestic violence close enough in proximity to the child to create risk of injury to the child)."
+        },
+        {
+          "id": "A.4",
+          "label": "4",
+          "description": "Educational neglect: Knowingly allowing the child to have extended or frequent absences from school, neglecting to enroll the child in some type of home schooling or public or private education, or preventing the child from attending school for other than justifiable reasons (when education is compulsory by law). Note: Criterian B5B is the only likely impact criterion associated with educational neglect."
+        },
+        {
+          "id": "A.5",
+          "label": "5",
+          "description": "Health Care neglect: Refusal or failure to provide appropriate health care including, but not limited to, failure to obtain appropriate medical, mental health, dental services, procedures, or medications) although the parent was financially able to do so or was offered other means to do so. It includes withholding of medically indicated treatment for a child with life threatening conditions."
+        },
+        {
+          "id": "A.6",
+          "label": "6",
+          "description": "Deprivation of necessities: The failure to provide age-appropriate nourishment, shelter and clothing to the child. Includes non-organic failure to thrive (FTT),(which must be determined by a competent medical authority, (FTT is a type of child neglect evidenced by an infant‟s or young child‟s failure to adequately grow and develop to or above the third percentile in height and weight when no organic basis for this deviation is found)."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "description": "Significant impact on the child involving any of the following:",
+      "elements": [
+        {
+          "id": "B.1",
+          "label": "1",
+          "description": "More than inconsequential physical injury. (see footnote)"
+        },
+        {
+          "id": "B.2",
+          "label": "2",
+          "description": "Reasonable potential for more than inconsequential physical injury given the act(s)/omission(s) and child‟s physical environment."
+        },
+        {
+          "id": "B.3",
+          "label": "3",
+          "description": "Psychological harm, including either:",
+          "sub_elements": [
+            {
+                "id": "B.3a",
+                "label": "a",
+                "description": "Child's more than inconsequential fear reaction. (see footnote)"
+            },
+            {
+                "id": "B.3b",
+                "label": "b",
+                "description": "Significant psychological distress (Major Depressive Disorder, Post-Traumatic Stress Disorder, Acute Stress Disorder, or other psychiatric disorders, at or near diagnostic thresholds) related to, or exacerbated by, the act(s) or omission(s)."
+            }
+          ]
+        },
+        {
+          "id": "B.4",
+          "label": "4",
+          "description": "Stress-related somatic symptoms (related to or exacerbated by the acts) that significantly interfere with normal functioning."
+        },
+        {
+          "id": "B.5",
+          "label": "5",
+          "description": "Reasonable potential for psychological harm.",
+          "sub_elements": [
+            {
+                "id": "B.5a",
+                "label": "a",
+                "description": "The act/omission (or pattern of acts/omissions) creates reasonable potential for the development of a psychiatric disorder (at or near diagnostic thresholds). The child's level of functioning and the risk and resilience factors present should be taken into consideration."
+            },
+            {
+                "id": "B.5b",
+                "label": "b",
+                "description": "The act (or pattern of acts) creates a reasonable potential for significant disruption of the child's physical, psychological, cognitive, or social development."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "inconsequential_physical_injury",
+      "label": "More than inconsequential physical injury",
+      "definition": "is an injury involving any of the following:",
+      "required_component_a": null,
+      "required_component_b": null,
+      "elements": [
+        { "item": 1, "description": "Any injury to the face or head." },
+        { "item": 2, "description": "Any injury to a child under 2 years of age." },
+        { "item": 3, "description": "More than superficial bruise(s). The bruise was a color other than very light red or had a total area exceeding that of the victim's hand or was tender to light touch." },
+        { "item": 4, "description": "More than superficial cut(s) or scratch. The cut or scratch was bleeding and required pressure to stop the bleeding." },
+        { "item": 5, "description": "Bleeding internally or from mouth or ears." },
+        { "item": 6, "description": "Welts (a bump or ridge raised on the skin)." },
+        { "item": 7, "description": "Loss of consciousness." },
+        { "item": 8, "description": "A burn." },
+        { "item": 9, "description": "Heat exhaustion or heat stroke." },
+        { "item": 10, "description": "Loss of functioning (including, but not limited to, sprains, broken bones, detached retina, loose or chipped teeth)." },
+        { "item": 11, "description": "Damage to internal organs." },
+        { "item": 12, "description": "Disfigurement (including, but not limited to scarring)." },
+        { "item": 13, "description": "Swelling lasting at least 24 hours." },
+        { "item": 14, "description": "Pain felt (a) in the course of normal activities and (b) at least 24 hours after the physical injury was suffered. NOTE: At times, the victim (especially young children) is (a) unable to report verbally about pain or (b) inaccessible for assessment. In such cases, the criterion is met if the nature of the injuries would typically result in pain as defined above." },
+        { "item": 15, "description": "Death." }
+      ]
+    },
+    {
+      "id": "inconsequential_fear",
+      "label": "More than inconsequential fear reaction",
+      "definition": "is: (a) Fear (verbalized or displayed) of bodily injury to self or others AND (b) At least one of the following signs of fear or anxiety lasting at least 48 hours:",
+      "required_component_a": "",
+      "required_component_b": [
+        { "item": 1, "description": "Persistent intrusive recollections of the incident." },
+        { "item": 2, "description": "Marked negative reactions to cues related to incident, as evidenced by: (a) avoidance of cues; (b) subjective or overt distress to cues; or (c) physiological hyper-arousal to cues. (NOTE: Abuser can be a cue)." },
+        { "item": 3, "description": "Acting or feeling as if incident is recurring." },
+        {
+          "item": 4,
+          "description": "Marked symptoms of anxiety (any of the following):",
+          "sub_elements": [
+            "Difficulty falling or staying asleep.",
+            "Irritability or outbursts of anger.",
+            "Difficulty concentrating.",
+            "Hyper-vigilance (i.e., acting overly sensitive to sounds and sights in the environment; scanning the environment expecting danger; feeling keyed up and on edge).",
+            "Exaggerated startle response."
+          ]
+        }
+      ],
+      "elements": null
+    }
+  ],
+  "neglect_type_table": {
+    "description": "Select the type(s) of neglect present and vote on each",
+    "columns": {
+      "type_of_neglect": [
+        "Yes"
+      ],
+      "nyu_mtt_member": [
+        "Yes",
+        "No"
+      ],
+      "idc_total_votes": [
+        "Yes",
+        "No"
+      ]
+    },
+    "rows": [
+      {
+        "id": "neglect_1",
+        "label": "1. Abandonment",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "neglect_2",
+        "label": "2. Lack of Supervision",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "neglect_3",
+        "label": "3. Exposure to Physical Hazards",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "neglect_4",
+        "label": "4. Educational Neglect",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "neglect_5",
+        "label": "5. Medical Neglect",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "neglect_6",
+        "label": "6. Deprivation of Necessities",
+        "type_of_neglect": {
+          "outcome": null
+        },
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      }
+    ]
+  },
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": [
+        "Yes",
+        "No"
+      ],
+      "idc_total_votes": [
+        "Yes",
+        "No"
+      ]
+    },
+    "rows": [
+      {
+        "id": "B.1",
+        "label": "B. 1",
+        "short_description": "More than inconsequential physical injury",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.2a",
+        "label": "B. 2a",
+        "short_description": "Reasonable potential for more than inconsequential physical injury",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.3a",
+        "label": "B. 3a",
+        "short_description": "More than inconsequential fear reaction",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.3b",
+        "label": "B. 3b",
+        "short_description": "Significant psychological distress",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.4",
+        "label": "B.4",
+        "short_description": "Somatic symptoms that significantly interfere with normal functioning",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.5a",
+        "label": "B. 5a",
+        "short_description": "Reasonable potential for psychological harm",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "B.5b",
+        "label": "B. 5b",
+        "short_description": "Reasonable potential for psychological harm via disruption of development",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "FTE",
+        "label": "First Time Exclusion (FTE)",
+        "short_description": "Meets criteria; however, first time incident with no significant risk, physical injury and/or psychological impact.",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": {
+      "outcome": null
+    },
+    "idc_total_votes": {
+      "outcome": null
+    }
+  },
+  "egregious_error": {
+    "question_id": "Q81",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Neglect",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+}

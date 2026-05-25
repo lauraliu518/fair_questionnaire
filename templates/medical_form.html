@@ -5,7 +5,242 @@
 
 {% block content %}
 <form id="medical-form">
-    <p>Populate with correct form depending on stored maltreatment type</p>
+    <!-- ── SECTION 1: Criteria Text ─────────────────────────────── -->
+    <div class="form-group">
+        <h2>{{ form.form_title }}</h2>
+        {% if form.definition %}
+            <p class="definition">{{ form.definition }}</p>
+        {% endif %}
+
+        {% for criterion in form.criteria %}
+            <div class="criterion">
+                <p><strong>{{ criterion.label }}.</strong> {{ criterion.description }}</p>
+
+                {% if criterion.elements %}
+                    <ol class="criterion-elements">
+                        {% for item in criterion.elements %}
+                            <li>
+                                {{ item.description }}
+
+                                {% if item.sub_elements %}
+                                    <ol class="subitems" type="a">
+                                        {% for subitem in item.sub_elements %}
+                                            <li>{{ subitem.description }}</li>
+                                        {% endfor %}
+                                    </ol>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ol>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- ── SECTION 1b: Footnotes (conditional) ──────────────────── -->
+    {% if form.footnotes %}
+        <div class="footnotes-section">
+            {% for footnote in form.footnotes %}
+                <div class="footnote">
+                    <p><strong>** {{ footnote.label }}</strong></p>
+                    <p>{{ footnote.definition }}</p>
+                    {% if footnote.required_component_a %}
+                        <p><strong>(a)</strong> {{ footnote.required_component_a }}</p>
+                    {% endif %}
+                    {% if footnote.required_component_b %}
+                        <p><strong>(b)</strong> At least one of the following:</p>
+                        <ol class="criterion-elements">
+                            {% for b_item in footnote.required_component_b %}
+                                <li>
+                                    {{ b_item.description }}
+                                    {% if b_item.sub_elements %}
+                                        <ul class="subitems">
+                                            {% for symptom in b_item.sub_elements %}
+                                                <li>{{ symptom }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                    {% if footnote.elements %}
+                        <ul class="subitems">
+                            {% for elem in footnote.elements %}
+                                <li>{{ elem.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+     <!-- ── SECTION 1c: Neglect Type Table (Child Neglect only) ──── -->
+    {% if form.neglect_type_table %}
+        <div class="neglect-type-section">
+            <h3>Type of Neglect</h3>
+            <table class="voting-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Type of Neglect</th>
+                        <th colspan="2">NYU/MTT Member</th>
+                        <th colspan="2">IDC Total Votes</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Yes</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in form.neglect_type_table.rows %}
+                        <tr>
+                            <td>{{ row.label }}</td>
+                            <td>
+                                <input type="checkbox"
+                                       name="neglect_type_{{ row.id }}"
+                                       value="true">
+                            </td>
+                            <td>
+                                <input type="radio"
+                                       name="nyu_mtt_{{ row.id }}"
+                                       value="true">
+                            </td>
+                            <td>
+                                <input type="radio"
+                                       name="nyu_mtt_{{ row.id }}"
+                                       value="false">
+                            </td>
+                            <td>
+                                <input type="radio"
+                                       name="idc_{{ row.id }}"
+                                       value="true">
+                            </td>
+                            <td>
+                                <input type="radio"
+                                       name="idc_{{ row.id }}"
+                                       value="false">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+    <!-- ── SECTION 2: Voting Table ──────────────────────────────── -->
+    <div class="form-group">
+        <table class="voting-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th colspan="2">NYU/MTT Member</th>
+                    <th colspan="2">IDC Total Votes</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Yes</th>
+                    <th>No</th>
+                    <th>Yes</th>
+                    <th>No</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in form.voting_table.rows %}
+                    <tr>
+                        <td>
+                            <strong>{{ row.label }}</strong><br>
+                            <span class="row-description">{{ row.short_description }}</span>
+                        </td>
+                        <td>
+                            <input type="radio"
+                                   name="nyu_mtt_{{ row.id }}"
+                                   value="true">
+                        </td>
+                        <td>
+                            <input type="radio"
+                                   name="nyu_mtt_{{ row.id }}"
+                                   value="false">
+                        </td>
+                        <td>
+                            <input type="radio"
+                                   name="idc_{{ row.id }}"
+                                   value="true">
+                        </td>
+                        <td>
+                            <input type="radio"
+                                   name="idc_{{ row.id }}"
+                                   value="false">
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ── SECTION 3: Overall Decision ─────────────────────────── -->
+    <div class="form-group">
+        <h3>Overall Decision</h3>
+        <table class="voting-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th colspan="2">NYU/MTT Member</th>
+                    <th colspan="2">IDC Total Votes</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Yes</th>
+                    <th>No</th>
+                    <th>Yes</th>
+                    <th>No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>{{ form.overall_decision.label }}</strong><br>
+                        <span class="row-description">{{ form.overall_decision.description }}</span>
+                    </td>
+                    <td>
+                        <input type="radio" name="nyu_mtt_overall" value="true">
+                    </td>
+                    <td>
+                        <input type="radio" name="nyu_mtt_overall" value="false">
+                    </td>
+                    <td>
+                        <input type="radio" name="idc_overall" value="true">
+                    </td>
+                    <td>
+                        <input type="radio" name="idc_overall" value="false">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ── SECTION 4: Egregious Error ──────────────────────────── -->
+    <div class="form-group">
+        <p class="question-label">{{ form.egregious_error.label }}</p>
+        {% for option in form.egregious_error.options %}
+            <label class="radio-option">
+                <div>
+                    <input type="radio"
+                    name="egregious_error"
+                    value="{{ option | lower }}">
+                    {{ option }}
+                </div>
+            </label>
+        {% endfor %}
+    </div>
+
+    <!-- Navigation -->
     <div class="button-group">
     <button id="btn-back" class="back-btn" type="button">Back</button>
     <button class="next-btn" type="submit">Next</button>

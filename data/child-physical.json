@@ -1,0 +1,208 @@
+{
+  "form_title": "Child Physical Abuse",
+  "type_of_maltreatment": "Child Physical",
+  "definition": null,
+  "criteria": [
+    {
+      "id": "A",
+      "label": "A",
+      "description": "The non-accidental use of physical force on the part of a child's caregiver. Physical force includes, but is not limited to, at least one of the following:",
+      "elements": [
+        { "id": "A.1", "label": null, "description": "Hitting with an open hand or slapping, including spanking, dropping, pushing or shoving" },
+        { "id": "A.2", "label": null, "description": "Grabbing or yanking limbs or body" },
+        { "id": "A.3", "label": null, "description": "Poking" },
+        { "id": "A.4", "label": null, "description": "Hair-pulling" },
+        { "id": "A.5", "label": null, "description": "Scratching" },
+        { "id": "A.6", "label": null, "description": "Pinching" },
+        { "id": "A.7", "label": null, "description": "Restraining" },
+        { "id": "A.8", "label": null, "description": "Shaking" },
+        { "id": "A.9", "label": null, "description": "Throwing" },
+        { "id": "A.10", "label": null, "description": "Biting" },
+        { "id": "A.11", "label": null, "description": "Kicking" },
+        { "id": "A.12", "label": null, "description": "Hitting with fist" },
+        { "id": "A.13", "label": null, "description": "Hitting with a stick, strap, belt, electric cord, or other object" },
+        { "id": "A.14", "label": null, "description": "Scalding" },
+        { "id": "A.15", "label": null, "description": "Burning" },
+        { "id": "A.16", "label": null, "description": "Poisoning" },
+        { "id": "A.17", "label": null, "description": "Stabbing" },
+        { "id": "A.18", "label": null, "description": "Applying force to throat" },
+        { "id": "A.19", "label": null, "description": "Strangling or cutting off air supply" },
+        { "id": "A.20", "label": null, "description": "Holding under water" },
+        { "id": "A.21", "label": null, "description": "Brandishing or using a weapon" }
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "description": "Significant impact on the child involving any of the following:",
+      "elements": [
+        {
+          "id": "B.1",
+          "label": "",
+          "description": "More than inconsequential physical injury. (*#see footnote)"
+        },
+        {
+          "id": "B.2",
+          "label": "",
+          "description": "Reasonable potential for more than inconsequential physical injury given the inherent dangerousness of the act, the degree of force used and the physical environment in which acts occurred."
+        },
+        {
+          "id": "B.3",
+          "label": "",
+          "description": "More than inconsequential fear reaction (**see footnote)."
+        }
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "inconsequential_physical_injury",
+      "label": "More than inconsequential physical injury",
+      "definition": "is an injury involving any of the following:",
+      "required_component_a": null,
+      "required_component_b": null,
+      "elements": [
+        { "item": 1, "description": "Any injury to the face or head." },
+        { "item": 2, "description": "Any injury to a child under 2 years of age." },
+        { "item": 3, "description": "More than superficial bruise(s). The bruise was a color other than very light red or had a total area exceeding that of the victim's hand or was tender to light touch." },
+        { "item": 4, "description": "More than superficial cut(s) or scratch. The cut or scratch was bleeding and required pressure to stop the bleeding." },
+        { "item": 5, "description": "Bleeding internally or from mouth or ears." },
+        { "item": 6, "description": "Welts (a bump or ridge raised on the skin)." },
+        { "item": 7, "description": "Loss of consciousness." },
+        { "item": 8, "description": "A burn." },
+        { "item": 9, "description": "Heat exhaustion or heat stroke." },
+        { "item": 10, "description": "Loss of functioning (including, but not limited to, sprains, broken bones, detached retina, loose or chipped teeth)." },
+        { "item": 11, "description": "Damage to internal organs." },
+        { "item": 12, "description": "Disfigurement (including, but not limited to scarring)." },
+        { "item": 13, "description": "Swelling lasting at least 24 hours." },
+        { "item": 14, "description": "Pain felt (a) in the course of normal activities and (b) at least 24 hours after the physical injury was suffered. NOTE: At times, the victim (especially young children) is (a) unable to report verbally about pain or (b) inaccessible for assessment. In such cases, the criterion is met if the nature of the injuries would typically result in pain as defined above." },
+        { "item": 15, "description": "Death." }
+      ]
+    },
+    {
+      "id": "inconsequential_fear",
+      "label": "More than inconsequential fear reaction",
+      "definition": "is: (a) Fear (verbalized or displayed) of bodily injury to self or others AND (b) At least one of the following signs of fear or anxiety lasting at least 48 hours:",
+      "required_component_a": "",
+      "required_component_b": [
+        { "item": 1, "description": "Persistent intrusive recollections of the incident." },
+        { "item": 2, "description": "Marked negative reactions to cues related to incident, as evidenced by: (a) avoidance of cues; (b) subjective or overt distress to cues; or (c) physiological hyper-arousal to cues. (NOTE: Abuser can be a cue)." },
+        { "item": 3, "description": "Acting or feeling as if incident is recurring." },
+        {
+          "item": 4,
+          "description": "Marked symptoms of anxiety (any of the following):",
+          "sub_elements": [
+            "Difficulty falling or staying asleep.",
+            "Irritability or outbursts of anger.",
+            "Difficulty concentrating.",
+            "Hyper-vigilance (i.e., acting overly sensitive to sounds and sights in the environment; scanning the environment expecting danger; feeling keyed up and on edge).",
+            "Exaggerated startle response."
+          ]
+        }
+      ],
+      "elements": null
+    }
+  ],
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": ["Yes", "No"],
+      "idc_total_votes": ["Yes", "No"]
+    },
+    "rows": [
+      {
+        "id": "A",
+        "label": "Meets Criterion A",
+        "short_description": "Non-accidental use of physical force",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.1",
+        "label": "B. 1",
+        "short_description": "More than inconsequential physical injury",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.2",
+        "label": "B. 2",
+        "short_description": "Reasonable potential for more than inconsequential physical injury",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.3",
+        "label": "B. 3",
+        "short_description": "More than inconsequential fear reaction",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "exclusion_physical_play",
+        "label": "Exclusion 1",
+        "short_description": "Acts committed during developmentally appropriate physical play",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "exclusion_protection_2a",
+        "label": "Exclusion 2.a",
+        "short_description": "Acts committed to Protect Child, Another Person or Pet from Imminent Physical Harm: Sole function of act was to protect partner, another person or pet from imminent physical harm",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "exclusion_protection_2b",
+        "label": "Exclusion 2.b",
+        "short_description": "Acts committed to protect child, others, or pet from imminent harm: Act used minimally sufficient force to stop child's potentially harmful behavior",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_1",
+        "label": "Self Protection Exclusion 1",
+        "short_description": "Act occurred while child/adolescent was in the act of using physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_2",
+        "label": "Self Protection Exclusion 2",
+        "short_description": "Sole function of act was to stop child/adolescent's use of physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_3",
+        "label": "Self Protection Exclusion 3",
+        "short_description": "Act used minimally sufficient force to stop child/adolescent's use of physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "FTE",
+        "label": "First Time Exclusion (FTE)",
+        "short_description": "Meets criteria; however, first time incident with no significant risk, physical injury and/or psychological impact.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": { "outcome": null },
+    "idc_total_votes": { "outcome": null }
+  },
+  "egregious_error": {
+    "question_id": "Q82",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Physical",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": ["Yes", "No"]
+  }
+}

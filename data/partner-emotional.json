@@ -1,0 +1,131 @@
+{
+  "form_title": "Partner Emotional Abuse",
+  "type_of_maltreatment": "Partner Emotional",
+  "definition": null,
+  "criteria": [
+    {
+      "id": "A",
+      "label": "A",
+      "description": "Non-accidental act or acts (excluding physical and sexual abuse acts) or threat adversely affecting the psychological well-being of the partner, such as those listed below. Acts not listed, but of similar severity are also eligible.",
+      "elements": [
+        { "id": "A.1", "label": null, "description": "Berating, disparaging, degrading, humiliating victim (or other similar behavior)" },
+        { "id": "A.2", "label": null, "description": "Interrogating victim" },
+        { "id": "A.3", "label": null, "description": "Restricting victim's ability to come and go freely (when unwarranted)" },
+        { "id": "A.4", "label": null, "description": "Obstructing victim's access to assistance (including, but not limited to, law enforcement, legal protective or medical resources, including FAP, a victim advocate, military command, or DV shelter)" },
+        { "id": "A.5", "label": null, "description": "Threatening victim (including, but not limited to, indicating/implying future physical harm, sexual assault, threats to kill)" },
+        { "id": "A.6", "label": null, "description": "Harming, or indicating that abuser will harm, people/things that victim cares about, such as children, self, other people, pets or property" },
+        { "id": "A.7", "label": null, "description": "Restricting victim's access to or use of economic resources (when unwarranted)" },
+        { "id": "A.8", "label": null, "description": "Restricting victim's access to or use of military services (including, but not limited to, taking away Family member's ID)" },
+        { "id": "A.9", "label": null, "description": "Isolating victim from family, friends, or social support resources" },
+        { "id": "A.10", "label": null, "description": "Stalking the victim" },
+        { "id": "A.11", "label": null, "description": "Trying to make victim think that s/he is crazy (or make others think that victim is mentally ill)" }
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "description": "Significant impact on the partner involving any of the following:",
+      "elements": [
+        {
+          "id": "B.1",
+          "label": "B. 1",
+          "description": "Psychological harm including any of the following:",
+          "sub_elements": [
+            { "id": "B.1a", "label": "a", "description": "Victim's more than inconsequential fear reaction (see footnote)" },
+            { "id": "B.1b", "label": "b", "description": "Significant psychological distress (Major Depressive Disorder, Post-Traumatic Stress Disorder, Acute Stress Disorder, or other psychiatric disorders, at or near diagnostic thresholds) related to, or exacerbated by, the act(s)." },
+            { "id": "B.1c", "label": "c", "description": "Victim's fear of emotionally abusive act(s) that significantly interfere(s) with the victim's ability to carry out any of these five major life activities: work; education; religion; necessary medical or mental health services; or contact with family/friends." }
+          ]
+        },
+        {
+          "id": "B.2",
+          "label": "B. 2",
+          "description": "Stress-related somatic symptoms (related to or exacerbated by the acts) that significantly interfere with normal functioning."
+        }
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "inconsequential_fear",
+      "label": "More than inconsequential fear reaction",
+      "definition": "is defined as: (a) Fear (verbalized or displayed) of bodily injury to self or others AND (b) At least one of the following signs of fear or anxiety lasting at least 48 hours:",
+      "required_component_a": "Fear (verbalized or displayed) of bodily injury to self or others",
+      "required_component_b": [
+        { "item": 1, "description": "Persistent intrusive recollections of the incident." },
+        { "item": 2, "description": "Marked negative reactions to cues related to incident, as evidenced by: (a) avoidance of cues; (b) subjective or overt distress to cues; or (c) physiological hyper-arousal to cues. (NOTE: Abuser can be a cue)." },
+        { "item": 3, "description": "Acting or feeling as if incident is recurring." },
+        {
+          "item": 4,
+          "description": "Marked symptoms of anxiety (any of the following):",
+          "sub_elements": [
+            "Difficulty falling or staying asleep.",
+            "Irritability or outbursts of anger.",
+            "Difficulty concentrating.",
+            "Hyper-vigilance (i.e., acting overly sensitive to sounds and sights in the environment; scanning the environment expecting danger; feeling keyed up and on edge).",
+            "Exaggerated startle response."
+          ]
+        }
+      ]
+    }
+  ],
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": ["Yes", "No"],
+      "idc_total_votes": ["Yes", "No"]
+    },
+    "rows": [
+      {
+        "id": "A",
+        "label": "",
+        "short_description": "Meets Criterion A (Non-accidental acts)",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.1a",
+        "label": "B. 1a",
+        "short_description": "More than inconsequential fear reaction",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.1b",
+        "label": "B. 1b",
+        "short_description": "Significant psychological distress",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.1c",
+        "label": "B. 1c",
+        "short_description": "Fear interferes with employment; education; religious faith; necessary medical or mental health service; or contact with family/friends",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.2",
+        "label": "B. 2",
+        "short_description": "Stress-related somatic symptoms",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": { "outcome": null },
+    "idc_total_votes": { "outcome": null }
+  },
+  "egregious_error": {
+    "question_id": "Q80",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Emotional",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": ["Yes", "No"]
+  }
+}

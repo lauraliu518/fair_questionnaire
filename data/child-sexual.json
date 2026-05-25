@@ -1,0 +1,110 @@
+{
+  "form_title": "Child Sexual Abuse",
+  "type_of_maltreatment": "Child Sexual",
+  "definition": "Sexual activity by an alleged abuser with a child for the purpose of sexual gratification of the child, the alleged abuser or any other person.",
+  "criteria": [
+    {
+      "id": "A1",
+      "label": "A1",
+      "description": "The alleged abuser's use of force, trickery, threatening or taking advantage of the child's youth or naïveté to engage in penetration of the mouth, vagina, or anus - however slight - by the penis, mouth or by a hand or finger or any object; or use of the vagina, mouth or anus to force a child to participate in a sexual act with the intent to abuse, humiliate, harass or degrade the child or to arouse or gratify the sexual desire of the alleged abuser, the child or any other person.",
+      "elements": null
+    },
+    {
+      "id": "A2",
+      "label": "A2 Direct Sexual Contact (With Penetration and Use of Force) - ",
+      "description": "The alleged abuser's engaging in any of the following: 1. Placing the alleged abuser's sexual organ in the mouth, vagina, or anus of a child or placing the vagina on/over the penis of the child, however slight the penetration; or 2. Taking into the alleged abuser's mouth, vagina, or anus the sexual organ of a child, however slight the penetration."
+    },
+    {
+      "id": "A3",
+      "label": "Direct Sexual Contact (Without Penetration) - ",
+      "description": "Physical contact of a sexual nature not involving rape, intercourse, or sodomy between the child and the alleged abuser with the intent to abuse, humiliate, harass or degrade the child or to arouse or gratify the sexual desire of the alleged abuser, the child or any other person, including, but not limited to any of the following: 1. Fondling, rubbing, licking or stroking of the genitals, breasts or buttocks, directly or through clothing; or 2. Attempted penetration of the vagina, anus or mouth with the penis, hand, tongue, finger or any object."
+    },
+    {
+      "id": "A4",
+      "label": "Sexual Exploitation Without Direct Sexual Contact - ",
+      "description": "Forcing, tricking, enticing, threatening or pressuring a child to participate in acts for anyone's sexual gratification without direct physical contact between the child and the alleged abuser or others. Acts include, but are not limited to, exposing child's or alleged abuser's genitals, anus or (female) breasts; having child masturbate or watch masturbation; having child participate in sexual activity with a third person (including child prostitution); having child pose, undress or perform in a sexual fashion (including child pornography); exposing child to pornography or live sexual performance (for example, photographs, TV, computers, videos, email, magazines, sexting, etc.); “peeping” or other prurient watching (i.e., voyeurism) without the child's knowledge."
+    }
+  ],
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": [
+        "Yes",
+        "No"
+      ],
+      "idc_total_votes": [
+        "Yes",
+        "No"
+      ]
+    },
+    "rows": [
+      {
+        "id": "A1",
+        "label": "",
+        "short_description": "Meets criterion A1 Direct Sexual Contact (With Penetration and Use of Force)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "A.2",
+        "label": "",
+        "short_description": "Meets criterion A2 Direct Sexual Contact (With Penetration)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "A.3",
+        "label": "",
+        "short_description": "Meets criterion A3 Direct Sexual Contact (Without Penetration)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "A.3",
+        "label": "",
+        "short_description": "Meets criterion A4 Sexual Exploitation Without Direct Sexual Contact",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": {
+      "outcome": null
+    },
+    "idc_total_votes": {
+      "outcome": null
+    }
+  },
+  "egregious_error": {
+    "question_id": "Q81",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Neglect",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+}

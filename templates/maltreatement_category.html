@@ -8,8 +8,8 @@
     <div class="form-group">
         <label class="question-label">Type of Maltreatment</label>
          <select id="maltreatment-type" name="maltreatment-type" required>
-            {% for type in maltreatment_types %}
-                <option value="{{type}}">{{type}}</option>
+            {% for i in range(maltreatment_types | length) %}
+                <option value="{{maltreatment_type_ids[i]}}">{{maltreatment_types[i]}}</option>
             {% endfor %}
         </select>
     </div>
@@ -35,7 +35,7 @@
         }));
 
         if (destination === 'next') {
-            window.location.href = '/medical-form';
+            window.location.href = `/medical-form?type=${maltreatmentType}`;
         } else {
             window.location.href = '/';
         }
