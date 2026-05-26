@@ -1,0 +1,222 @@
+{
+  "form_title": "Partner Physical Abuse",
+  "type_of_maltreatment": "Partner Physical",
+  "definition": null,
+  "criteria": [
+    {
+      "id": "A",
+      "label": "A",
+      "description": "The non-accidental use of physical force against a current or former spouse or partner. Physical force includes, but is not limited to, at least one of the following:",
+      "elements": [
+        { "id": "A.ex1", "label": null, "description": "Hitting with an open hand or slapping, including spanking, dropping, pushing or shoving" },
+        { "id": "A.ex2", "label": null, "description": "Grabbing or yanking limbs or body" },
+        { "id": "A.ex3", "label": null, "description": "Poking" },
+        { "id": "A.ex4", "label": null, "description": "Hair-pulling" },
+        { "id": "A.ex5", "label": null, "description": "Scratching" },
+        { "id": "A.ex6", "label": null, "description": "Pinching" },
+        { "id": "A.ex7", "label": null, "description": "Restraining" },
+        { "id": "A.ex8", "label": null, "description": "Shaking" },
+        { "id": "A.ex9", "label": null, "description": "Throwing" },
+        { "id": "A.ex10", "label": null, "description": "Biting" },
+        { "id": "A.ex11", "label": null, "description": "Kicking" },
+        { "id": "A.ex12", "label": null, "description": "Hitting with fist" },
+        { "id": "A.ex13", "label": null, "description": "Hitting with a stick, strap, belt, electric cord, or other object" },
+        { "id": "A.ex14", "label": null, "description": "Scalding" },
+        { "id": "A.ex15", "label": null, "description": "Burning" },
+        { "id": "A.ex16", "label": null, "description": "Poisoning" },
+        { "id": "A.ex17", "label": null, "description": "Stabbing" },
+        { "id": "A.ex18", "label": null, "description": "Applying force to throat" },
+        { "id": "A.ex19", "label": null, "description": "Strangling or cutting off air supply" },
+        { "id": "A.ex20", "label": null, "description": "Holding under water" },
+        { "id": "A.ex21", "label": null, "description": "Brandishing or using a weapon" }
+      ]
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "description": "Significant impact on the spouse or partner involving any of the following:",
+      "elements": [
+        {
+          "id": "B.1",
+          "label": "B. 1",
+          "description": "Any physical injury (including, but not limited to, pain that lasts at least four hours, bruises, cuts, sprains, broken bones, loss of consciousness, death)."
+        },
+        {
+          "id": "B.2",
+          "label": "B. 2",
+          "description": "Reasonable potential for more than inconsequential physical injury (*see footnote) given the inherent dangerousness of the act, the degree of force used and the physical environment in which acts occurred."
+        },
+        {
+          "id": "B.3",
+          "label": "B. 3",
+          "description": "More than inconsequential fear reaction (**see footnote)."
+        }
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "inconsequential_physical_injury",
+      "label": "More than inconsequential physical injury",
+      "definition": "More than inconsequential physical injury is an injury involving any of the following:",
+      "required_component_a": null,
+      "required_component_b": null,
+      "elements": [
+        { "item": 1, "description": "Any injury to the face or head." },
+        { "item": 2, "description": "Any injury to a child under 2 years of age." },
+        { "item": 3, "description": "More than superficial bruise(s). The bruise was a color other than very light red or had a total area exceeding that of the victim's hand or was tender to light touch." },
+        { "item": 4, "description": "More than superficial cut(s) or scratch. The cut or scratch was bleeding and required pressure to stop the bleeding." },
+        { "item": 5, "description": "Bleeding internally or from mouth or ears." },
+        { "item": 6, "description": "Welts (a bump or ridge raised on the skin)." },
+        { "item": 7, "description": "Loss of consciousness." },
+        { "item": 8, "description": "A burn." },
+        { "item": 9, "description": "Heat exhaustion or heat stroke." },
+        { "item": 10, "description": "Loss of functioning (including, but not limited to, sprains, broken bones, detached retina, loose or chipped teeth)." },
+        { "item": 11, "description": "Damage to internal organs." },
+        { "item": 12, "description": "Disfigurement (including, but not limited to scarring)." },
+        { "item": 13, "description": "Swelling lasting at least 24 hours." },
+        { "item": 14, "description": "Pain felt (a) in the course of normal activities and (b) at least 24 hours after the physical injury was suffered. NOTE: At times, the victim (especially young children) is (a) unable to report verbally about pain or (b) inaccessible for assessment. In such cases, the criterion is met if the nature of the injuries would typically result in pain as defined above." },
+        { "item": 15, "description": "Death." }
+      ]
+    },
+    {
+      "id": "inconsequential_fear",
+      "label": "More than inconsequential fear reaction",
+      "definition": "More than inconsequential fear reaction is: (a) Fear (verbalized or displayed) of bodily injury to self or others AND (b) At least one of the following signs of fear or anxiety lasting at least 48 hours:",
+      "required_component_a": "Fear (verbalized or displayed) of bodily injury to self or others",
+      "required_component_b": [
+        { "item": 1, "description": "Persistent intrusive recollections of the incident." },
+        { "item": 2, "description": "Marked negative reactions to cues related to incident, as evidenced by: (a) avoidance of cues; (b) subjective or overt distress to cues; or (c) physiological hyper-arousal to cues. (NOTE: Abuser can be a cue)." },
+        { "item": 3, "description": "Acting or feeling as if incident is recurring." },
+        {
+          "item": 4,
+          "description": "Marked symptoms of anxiety (any of the following):",
+          "sub_elements": [
+            "Difficulty falling or staying asleep.",
+            "Irritability or outbursts of anger.",
+            "Difficulty concentrating.",
+            "Hyper-vigilance (i.e., acting overly sensitive to sounds and sights in the environment; scanning the environment expecting danger; feeling keyed up and on edge).",
+            "Exaggerated startle response."
+          ]
+        }
+      ],
+      "elements": null
+    }
+  ],
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": ["Yes", "No"],
+      "idc_total_votes": ["Yes", "No"]
+    },
+    "rows": [
+      {
+        "id": "A",
+        "label": "Meets Criterion A",
+        "short_description": "Non-accidental use of physical force",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.1",
+        "label": "B. 1",
+        "short_description": "Any physical injury",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.2",
+        "label": "B. 2",
+        "short_description": "Reasonable potential for more than inconsequential physical injury",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "B.3",
+        "label": "B. 3",
+        "short_description": "More than inconsequential fear reaction",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "exclusion_physical_play",
+        "label": "Exclusion",
+        "short_description": "Acts committed during physical play",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_1a",
+        "label": "Self Protection Harm 1",
+        "short_description": "a. Act occurred while partner was in the act of using physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_1b",
+        "label": "Self Protection Harm 1",
+        "short_description": "b. Sole function of act was to stop partner's use of physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_1c",
+        "label": "Self Protection Harm 1",
+        "short_description": "c. Act used minimally sufficient force to stop partner's use of physical force.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_2a",
+        "label": "Self Protection Harm 2",
+        "short_description": "a. Act followed partner's threat to imminently inflict more than inconsequential physical injury.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "self_protection_2b",
+        "label": "Self Protection Harm 2",
+        "short_description": "b. At least one previous incident of partner inflicting more than inconsequential physical injury.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "protect_others_a",
+        "label": "Acts committed to protect partner, others, or pet",
+        "short_description": "a. Sole function of act was to protect partner, another person, or pet from imminent physical harm.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "protect_others_b",
+        "label": "Acts committed to protect partner, others, or pet",
+        "short_description": "b. Act used minimally sufficient force to stop partner's potentially harmful behavior.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      },
+      {
+        "id": "FTE",
+        "label": "First Time Exclusion (FTE)",
+        "short_description": "Meets criteria; however, first time incident with no significant risk, physical injury and/or psychological impact.",
+        "nyu_mtt_member": { "outcome": null },
+        "idc_total_votes": { "outcome": null }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": { "outcome": null },
+    "idc_total_votes": { "outcome": null }
+  },
+  "egregious_error": {
+    "question_id": "Q82",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Physical",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": ["Yes", "No"]
+  }
+}

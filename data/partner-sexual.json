@@ -1,0 +1,94 @@
+{
+  "form_title": "Partner Sexual Abuse",
+  "type_of_maltreatment": "Partner Sexual",
+  "definition": null,
+  "criteria": [
+    {
+      "id": "A1",
+      "label": "A1",
+      "description": "The use of physical force to compel the partner to engage in a sex act against his or her will, whether or not the act is completed.",
+      "elements": null
+    },
+    {
+      "id": "A2",
+      "label": "A2",
+      "description": "The use of a physically aggressive act, or use of one's body, size or strength, or an emotionally aggressive act to coerce a sex act (attempted or completed)."
+    },
+    {
+      "id": "A3",
+      "label": "A3",
+      "description": "An attempted or completed sex act involving a partner who is unable to provide consent. The victim is unable to understand the nature or conditions of the act, to decline participation, or to communicate unwillingness to engage in the sexual act because of illness; disability; being asleep or under the influence of alcohol or other drugs or other reasons)."
+    }
+  ],
+  "voting_table": {
+    "columns": {
+      "nyu_mtt_member": [
+        "Yes",
+        "No"
+      ],
+      "idc_total_votes": [
+        "Yes",
+        "No"
+      ]
+    },
+    "rows": [
+      {
+        "id": "A.1",
+        "label": "",
+        "short_description": "Meets criterion A1 (Use of physical force to compell sexual act)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "A.2",
+        "label": "",
+        "short_description": "Meets criterion A2 (Use of physical or emotional aggression to coerce sexual act)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      },
+      {
+        "id": "A.3",
+        "label": "",
+        "short_description": "Meets criterion A3 (Sexual act when victim is unable to provide consent)",
+        "nyu_mtt_member": {
+          "outcome": null
+        },
+        "idc_total_votes": {
+          "outcome": null
+        }
+      }
+    ]
+  },
+  "overall_decision": {
+    "label": "Overall Substantiation Finding",
+    "description": "Did this case end up meeting all criteria for the type of maltreatment?",
+    "nyu_mtt_member": {
+      "outcome": null
+    },
+    "idc_total_votes": {
+      "outcome": null
+    }
+  },
+  "egregious_error": {
+    "question_id": "Q81",
+    "display_condition": {
+      "field": "Type of Maltreatment",
+      "value": "Partner Neglect",
+      "operator": "Is Selected"
+    },
+    "label": "The committee made an egregious error in voting.",
+    "response": null,
+    "options": [
+      "Yes",
+      "No"
+    ]
+  }
+}
