@@ -28,17 +28,17 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Verify db file, table, and row count on startup
+# Verify db file, table, and row count
 def check_db():
     print("\n--- DB check ---")
-    # 1. does the file exist?
+    # check if .db file exist
     if os.path.exists(DATABASE):
         print(f"[ok] database file found:  {DATABASE}")
     else:
         print(f"[!!] database file MISSING: {DATABASE}")
         return
 
-    # 2. can we connect and query?
+    # check connection count
     try:
         conn = get_db_connection()
         row = conn.execute("SELECT COUNT(*) AS count FROM submissions").fetchone()
@@ -79,8 +79,25 @@ def basic_info():
 def maltreatment_category():
     return render_template('maltreatement_category.html', maltreatment_types=maltreatment_types, maltreatment_type_ids=maltreatment_type_ids)
 
-@app.route('/confirmation')
+# route to confirmation page: POST saves submission data; GET jumps to confimation page
+@app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
+    if request.method == 'POST':
+        payload = request.get_json()
+
+        conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
+
+        sql = "INSERT INTO submissions (submitted_at, data) VALUES (?, ?)"
+        cursor.execute(sql, (
+            payload['submitted_at'],
+            json.dumps(payload['data'])
+        ))
+        conn.commit()
+        conn.close()
+
+        return jsonify({'status': 'ok'})
+
     return render_template('confirmation.html')
 
 @app.route('/medical-form')
@@ -94,4 +111,4 @@ def housekeeping():
     return render_template('housekeeping.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
