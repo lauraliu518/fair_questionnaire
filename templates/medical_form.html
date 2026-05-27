@@ -105,27 +105,32 @@
                             <td>
                                 <input type="checkbox"
                                        name="neglect_type_{{ row.id }}"
-                                       value="true">
+                                       value="true"
+                                       required>
                             </td>
                             <td>
                                 <input type="radio"
                                        name="nyu_mtt_{{ row.id }}"
-                                       value="true">
+                                       value="true"
+                                       required>
                             </td>
                             <td>
                                 <input type="radio"
                                        name="nyu_mtt_{{ row.id }}"
-                                       value="false">
+                                       value="false"
+                                       required>
                             </td>
                             <td>
                                 <input type="radio"
                                        name="idc_{{ row.id }}"
-                                       value="true">
+                                       value="true"
+                                       required>
                             </td>
                             <td>
                                 <input type="radio"
                                        name="idc_{{ row.id }}"
-                                       value="false">
+                                       value="false"
+                                       required>
                             </td>
                         </tr>
                     {% endfor %}
@@ -161,22 +166,26 @@
                         <td>
                             <input type="radio"
                                    name="nyu_mtt_{{ row.id }}"
-                                   value="true">
+                                   value="true"
+                                   required>
                         </td>
                         <td>
                             <input type="radio"
                                    name="nyu_mtt_{{ row.id }}"
-                                   value="false">
+                                   value="false"
+                                   required>
                         </td>
                         <td>
                             <input type="radio"
                                    name="idc_{{ row.id }}"
-                                   value="true">
+                                   value="true"
+                                   required>
                         </td>
                         <td>
                             <input type="radio"
                                    name="idc_{{ row.id }}"
-                                   value="false">
+                                   value="false"
+                                   required>
                         </td>
                     </tr>
                 {% endfor %}
@@ -209,16 +218,16 @@
                         <span class="row-description">{{ form.overall_decision.description }}</span>
                     </td>
                     <td>
-                        <input type="radio" name="nyu_mtt_overall" value="true">
+                        <input type="radio" name="nyu_mtt_overall" value="true" required>
                     </td>
                     <td>
-                        <input type="radio" name="nyu_mtt_overall" value="false">
+                        <input type="radio" name="nyu_mtt_overall" value="false" required>
                     </td>
                     <td>
-                        <input type="radio" name="idc_overall" value="true">
+                        <input type="radio" name="idc_overall" value="true" required>
                     </td>
                     <td>
-                        <input type="radio" name="idc_overall" value="false">
+                        <input type="radio" name="idc_overall" value="false" required>
                     </td>
                 </tr>
             </tbody>
@@ -233,7 +242,8 @@
                 <div>
                     <input type="radio"
                     name="egregious_error"
-                    value="{{ option | lower }}">
+                    value="{{ option | lower }}"
+                    required>
                     {{ option }}
                 </div>
             </label>

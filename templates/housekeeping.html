@@ -8,11 +8,11 @@
     <div id="hardCase" class="form-group">
         <label for="hardCase" class="question-label">Did you have a difficult time voting on this case?</label>
         <div style="display: block; margin-bottom: 4px;">
-            <input type="radio" id="hardCaseYes" name="hardCase" value="yes" onclick="document.getElementById('whyHardCase').style.display='block'"> Yes
+            <input type="radio" id="hardCaseYes" name="hardCase" value="yes" onclick="document.getElementById('whyHardCase').style.display='block'" required> Yes
         </div>
 
         <div style="display: block; margin-bottom: 4px;">
-            <input type="radio" id="hardCaseNo" name="hardCase" value="no" onclick="document.getElementById('whyHardCase').style.display='none'"> No
+            <input type="radio" id="hardCaseNo" name="hardCase" value="no" onclick="document.getElementById('whyHardCase').style.display='none'" required> No
         </div>
     </div>
 
@@ -35,11 +35,11 @@
     <div id="medicalProvider" class="form-group">
         <label for="medicalProvider" class="question-label">Was there a medical provider on committee?</label>
         <div style="display: block; margin-bottom: 4px;">
-            <input type="radio" id="medicalProviderYes" name="medicalProvider" value="yes"> Yes
+            <input type="radio" id="medicalProviderYes" name="medicalProvider" value="yes" required> Yes
         </div>
 
     <div style="display: block; margin-bottom: 4px;">
-        <input type="radio" id="medicalProviderNo" name="medicalProvider" value="no"> No
+        <input type="radio" id="medicalProviderNo" name="medicalProvider" value="no" required> No
     </div>
 </div>
 <div class="button-group">
