@@ -1,6 +1,6 @@
 {
   "form_title": "Partner Neglect",
-  "type_of_maltreatment": "Partner Neglect",
+  "type_of_maltreatment": "partner_neglect",
   "definition": "The alleged abuser withholds necessary care or assistance for his or her current partner who is incapable of self-care physically, psychologically or culturally, although the caregiver is financially able to do so or has been offered other means to do so.",
   "criteria": [
     {

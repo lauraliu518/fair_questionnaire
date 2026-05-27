@@ -1,6 +1,6 @@
 {
   "form_title": "Partner Physical Abuse",
-  "type_of_maltreatment": "Partner Physical",
+  "type_of_maltreatment": "partner_physical",
   "definition": null,
   "criteria": [
     {
