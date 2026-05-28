@@ -1,6 +1,6 @@
 {
   "form_title": "Child Neglect",
-  "type_of_maltreatment": "Child Neglect",
+  "type_of_maltreatment": "child_neglect",
   "definition": "",
   "criteria": [
     {
