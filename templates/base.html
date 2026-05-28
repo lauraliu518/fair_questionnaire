@@ -8,7 +8,18 @@
 </head>
 <body>
   <header>
-    <h1>{% block page_title %}FAIR Questionnaire{% endblock %}</h1>
+    <div class="header-inner">
+      <img
+        class="header-logo"
+        src="{{ url_for('static', filename='assets/Nyu_short_color.svg.png') }}"
+        alt="NYU"
+      >
+      <h1 class="page-heading">
+        <span class="breadcrumb-root">FAIR Questionnaire</span>
+        <span class="breadcrumb-sep"> / </span>
+        <span class="breadcrumb-current">{% block page_title %}{% endblock %}</span>
+      </h1>
+    </div>
   </header>
   <main>
     {% block content %}{% endblock %}

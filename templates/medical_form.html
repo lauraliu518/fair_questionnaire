@@ -263,18 +263,14 @@
 <script>
     const formData = {{ form | tojson | safe }};
     const maltreatmentType = formData.type_of_maltreatment;
-    
-    // pull answers from local storage
-    const allForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
-    const saved = allForms[maltreatmentType];
-    if (saved) {
-        for (const [name, value] of Object.entries(saved)) {
-            if (value !== null) {
-                const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
-                if (el) el.checked = true;
-            }
-        }
 
+    const allForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
+    const saved = allForms[maltreatmentType] || {};
+    for (const [name, value] of Object.entries(saved)) {
+        if (value !== null) {
+            const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+            if (el) el.checked = true;
+        }
     }
 
     function collectFormData() {
@@ -290,8 +286,6 @@
     }
 
     function saveAndNavigate(destination) {
-
-        // save current answers
         const allForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
         allForms[maltreatmentType] = collectFormData();
         localStorage.setItem('medical_form', JSON.stringify(allForms));

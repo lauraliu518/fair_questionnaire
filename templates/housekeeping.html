@@ -48,52 +48,58 @@
 </div>
 
 </form>
+{% endblock %}
 
+{% block scripts %}
 <script>
-    // Restore previous progress
-    const saved = localStorage.getItem('housekeeping');
-    if (saved) {
-        const fields = JSON.parse(saved);
-        if (fields.hard_case) {
-            const radio = document.querySelector(`input[name="hardCase"][value="${fields.hard_case}"]`);
-            if (radio) radio.click();
+    const HOUSEKEEPING_FIELDS = [
+        { key: 'hard_case', name: 'hardCase', type: 'radio', clickOnRestore: true },
+        { key: 'why_hard_case', name: 'whyHardCase', type: 'radio' },
+        { key: 'why_hard_case_other', id: 'otherText', type: 'text' },
+        { key: 'medical_provider', name: 'medicalProvider', type: 'radio' },
+    ];
+
+    const saved = JSON.parse(localStorage.getItem('housekeeping') || '{}');
+    for (const field of HOUSEKEEPING_FIELDS) {
+        const value = saved[field.key];
+        if (value == null) continue;
+
+        if (field.type === 'text') {
+            document.getElementById(field.id).value = value;
+            continue;
         }
-        if (fields.why_hard_case) {
-            const radio = document.querySelector(`input[name="whyHardCase"][value="${fields.why_hard_case}"]`);
-            if (radio) radio.checked = true;
-        }
-        if (fields.why_hard_case_other) {
-            document.getElementById('otherText').value = fields.why_hard_case_other;
-        }
-        if (fields.medical_provider) {
-            const radio = document.querySelector(`input[name="medicalProvider"][value="${fields.medical_provider}"]`);
-            if (radio) radio.checked = true;
-        }
+
+        const el = document.querySelector(`input[name="${field.name}"][value="${value}"]`);
+        if (!el) continue;
+        if (field.clickOnRestore) el.click();
+        else el.checked = true;
     }
 
-    // Redirect to confirmation: 1. save record to database; 2. clear all local storage
-    document.getElementById('housekeeping-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
+    function collectHousekeepingData() {
+        const fields = {};
+        for (const field of HOUSEKEEPING_FIELDS) {
+            if (field.type === 'text') {
+                fields[field.key] = document.getElementById(field.id).value.trim() || null;
+            } else {
+                fields[field.key] = document.querySelector(`input[name="${field.name}"]:checked`)?.value ?? null;
+            }
+        }
+        return fields;
+    }
 
-        // Collect housekeeping fields
-        const hardCaseEl      = document.querySelector('input[name="hardCase"]:checked');
-        const whyHardCaseEl   = document.querySelector('input[name="whyHardCase"]:checked');
-        const medProviderEl   = document.querySelector('input[name="medicalProvider"]:checked');
+    async function submitHousekeeping() {
+        const housekeeping = collectHousekeepingData();
+        const maltreatmentCategory = JSON.parse(localStorage.getItem('maltreatment_category') || '{}');
+        const allMedicalForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
+        const typeKey = (maltreatmentCategory.maltreatment_type || '').replace(/-/g, '_');
+        const submittedMedicalForm = typeKey ? (allMedicalForms[typeKey] || {}) : {};
 
-        const housekeeping = {
-            hard_case:            hardCaseEl     ? hardCaseEl.value     : null,
-            why_hard_case:        whyHardCaseEl  ? whyHardCaseEl.value  : null,
-            why_hard_case_other:  document.getElementById('otherText').value.trim() || null,
-            medical_provider:     medProviderEl  ? medProviderEl.value  : null,
-        };
-
-        // build full payload from all localStorage data + housekeeping
         const payload = {
             submitted_at: new Date().toISOString(),
             data: {
                 basic_info:            JSON.parse(localStorage.getItem('basic_info')            || '{}'),
-                maltreatment_category: JSON.parse(localStorage.getItem('maltreatment_category') || '{}'),
-                medical_form:          JSON.parse(localStorage.getItem('medical_form')          || '{}'),
+                maltreatment_category: maltreatmentCategory,
+                medical_form:          submittedMedicalForm,
                 housekeeping:          housekeeping,
             }
         };
@@ -117,7 +123,27 @@
         } else {
             alert('There was an error saving your submission. Please try again.');
         }
+    }
+
+    function saveAndNavigate(destination) {
+        localStorage.setItem('housekeeping', JSON.stringify(collectHousekeepingData()));
+
+        if (destination === 'next') {
+            submitHousekeeping();
+        } else {
+            const category = JSON.parse(localStorage.getItem('maltreatment_category') || '{}');
+            const maltreatmentType = category.maltreatment_type || '';
+            window.location.href = `/medical-form?type=${maltreatmentType}`;
+        }
+    }
+
+    document.getElementById('housekeeping-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        saveAndNavigate('next');
+    });
+
+    document.getElementById('btn-back').addEventListener('click', function () {
+        saveAndNavigate('prev');
     });
 </script>
-
 {% endblock %}

@@ -29,7 +29,6 @@
     function saveAndNavigate(destination) {
         const maltreatmentType = document.getElementById('maltreatment-type').value;
 
-        // Always save current progress
         localStorage.setItem('maltreatment_category', JSON.stringify({
             maltreatment_type: maltreatmentType
         }));
