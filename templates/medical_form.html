@@ -262,8 +262,10 @@
 {% block scripts %}
 <script>
     const formData = {{ form | tojson | safe }};
+    const maltreatmentType = formData.type_of_maltreatment;
 
-    const saved = JSON.parse(localStorage.getItem('medical_form') || '{}');
+    const allForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
+    const saved = allForms[maltreatmentType] || {};
     for (const [name, value] of Object.entries(saved)) {
         if (value !== null) {
             const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
@@ -284,7 +286,9 @@
     }
 
     function saveAndNavigate(destination) {
-        localStorage.setItem('medical_form', JSON.stringify(collectFormData()));
+        const allForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
+        allForms[maltreatmentType] = collectFormData();
+        localStorage.setItem('medical_form', JSON.stringify(allForms));
 
         if (destination === 'next') {
             window.location.href = '/housekeeping';

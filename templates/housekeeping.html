@@ -87,13 +87,17 @@
             medical_provider:     medProviderEl  ? medProviderEl.value  : null,
         };
 
-        // build full payload from all localStorage data + housekeeping
+        const maltreatmentCategory = JSON.parse(localStorage.getItem('maltreatment_category') || '{}');
+        const allMedicalForms = JSON.parse(localStorage.getItem('medical_form') || '{}');
+        const typeKey = (maltreatmentCategory.maltreatment_type || '').replace(/-/g, '_');
+        const submittedMedicalForm = typeKey ? (allMedicalForms[typeKey] || {}) : {};
+
         const payload = {
             submitted_at: new Date().toISOString(),
             data: {
                 basic_info:            JSON.parse(localStorage.getItem('basic_info')            || '{}'),
-                maltreatment_category: JSON.parse(localStorage.getItem('maltreatment_category') || '{}'),
-                medical_form:          JSON.parse(localStorage.getItem('medical_form')          || '{}'),
+                maltreatment_category: maltreatmentCategory,
+                medical_form:          submittedMedicalForm,
                 housekeeping:          housekeeping,
             }
         };
