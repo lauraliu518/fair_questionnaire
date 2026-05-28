@@ -28,8 +28,12 @@
 
     function saveAndNavigate(destination) {
         const maltreatmentType = document.getElementById('maltreatment-type').value;
+        const previousType = saved ? JSON.parse(saved).maltreatment_type : null;
 
-        // Always save current progress
+        if (previousType !== null && previousType !== maltreatmentType) {
+            localStorage.removeItem('medical_form');
+        }
+
         localStorage.setItem('maltreatment_category', JSON.stringify({
             maltreatment_type: maltreatmentType
         }));
