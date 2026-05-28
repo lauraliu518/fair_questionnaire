@@ -110,5 +110,24 @@ def medical_form():
 def housekeeping():
     return render_template('housekeeping.html')
 
+@app.route('/admin-dashboard')
+def admin_dashboard():
+    conn = get_db_connection()
+    rows = conn.execute('SELECT * FROM submissions').fetchall()
+    conn.close()
+
+    parsed = []
+    for row in rows:
+        data = json.loads(row['data'])
+        parsed.append({
+            'id': data["basic_info"]["case_number"],
+            'date': data["basic_info"]["date"],
+            'rater1': data["basic_info"]["rater1"],
+            'rater2': data["basic_info"]["rater2"],
+            'site': data["basic_info"]["site"]
+        })
+
+    return render_template('admin_dashboard.html', rows=parsed, raters=raters, sites=sites)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
