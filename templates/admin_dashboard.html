@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - FAIR Questionnare{% endblock %}
+{% block page_title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+{% block extra_css %}
+<style>
+  main {
+    max-width: 100%;
+    margin: 16px;
+    padding: 0;
+    background: none;
+  }
+
+  form {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+{% endblock %}
+<body>
+
+<div class="shell">
+
+  <nav class="sidenav" aria-label="Main navigation">
+
+    <div class="nav-logo">
+      <i class="ti ti-layout-grid" aria-hidden="true"></i>
+    </div>
+
+    <button class="nav-btn active" id="btn-edit" onclick="switchTab('edit')" aria-label="Edit data">
+      <i class="ti ti-edit" aria-hidden="true"></i>
+      <span class="nav-tooltip">Edit data</span>
+    </button>
+
+    <button class="nav-btn" id="btn-submissions" onclick="switchTab('submissions')" aria-label="Submissions">
+      <i class="ti ti-table" aria-hidden="true"></i>
+      <span class="nav-tooltip">Submissions</span>
+    </button>
+
+  </nav>
+
+  <div class="main">
+
+    <div class="topbar">
+      <span class="topbar-title" id="page-title">Edit data</span>
+    </div>
+
+    <div class="panel" id="panel-edit">
+
+      <div class="entity-toggle">
+        <button class="etab active" id="etab-sites"  onclick="switchEntity('sites')">Sites</button>
+        <button class="etab"        id="etab-raters" onclick="switchEntity('raters')">Raters</button>
+      </div>
+
+      <div id="entity-sites">
+        <div class="list-header">
+          <span class="list-count">{{sites | length - 1}} sites</span>
+          <button class="add-btn" onclick="openDrawer('add', 'site')">
+            <i class="ti ti-plus" aria-hidden="true"></i> Add site
+          </button>
+        </div>
+
+        <div class="card">
+          {% for s in sites[1:] %}
+            <div class="list-item">
+              <div class="item-info">
+                <div class="item-name">{{s}}</div>
+              </div>
+              <div class="item-actions">
+                <button class="icon-btn" aria-label="Edit site" onclick="openDrawer('edit', 'site', 'Riverside Clinic')">
+                  <i class="ti ti-edit" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn" aria-label="Delete site">
+                  <i class="ti ti-trash" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          {%endfor%}
+        </div>
+      </div>
+
+      <div id="entity-raters" style="display: none;">
+        <div class="list-header">
+          <span class="list-count">{{raters | length -1}} raters</span>
+          <button class="add-btn" onclick="openDrawer('add', 'rater')">
+            <i class="ti ti-plus" aria-hidden="true"></i> Add rater
+          </button>
+        </div>
+
+        <div class="card">
+
+          {% for r in raters[1:] %}
+            <div class="list-item">
+              <div class="item-info">
+                <div class="item-name">{{r}}</div>
+              </div>
+              <div class="item-actions">
+                <button class="icon-btn" aria-label="Edit site" onclick="openDrawer('edit', 'site', 'Riverside Clinic')">
+                  <i class="ti ti-edit" aria-hidden="true"></i>
+                </button>
+                <button class="icon-btn" aria-label="Delete site">
+                  <i class="ti ti-trash" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          {%endfor%}
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel" id="panel-submissions" style="display: none;">
+
+      <p class="section-label">All submissions</p>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Site</th>
+                <th>Rater 1</th>
+                <th>Rater 2</th>
+                <th>Submitted</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in rows %}
+              <tr>
+                <td class="mono">#{{r['id']}}</td>
+                <td>{{r['site']}}</td>
+                <td>{{r['rater1']}}</td>
+                <td>{{r['rater2']}}</td>
+                <td class="muted">{{r['date']}}</td>
+                <td><span class="status-pill status-complete">Complete</span></td>
+                <td>
+                  <button class="icon-btn" aria-label="View submission">
+                    <i class="ti ti-external-link" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="drawer-overlay" id="overlay" onclick="closeDrawer()"></div>
+
+  <div class="drawer" id="drawer">
+
+    <div class="drawer-header">
+      <span class="drawer-title" id="drawer-title">Add site</span>
+      <button class="close-btn" onclick="closeDrawer()" aria-label="Close drawer">
+        <i class="ti ti-x" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="drawer-body" id="drawer-body">
+
+    </div>
+
+    <div class="drawer-footer">
+      <button class="btn-ghost" onclick="closeDrawer()">Cancel</button>
+      <button class="btn-primary">Save</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+  function switchTab(tab) {
+    document.getElementById('panel-edit').style.display        = tab === 'edit'        ? '' : 'none';
+    document.getElementById('panel-submissions').style.display = tab === 'submissions' ? '' : 'none';
+    document.getElementById('btn-edit').classList.toggle('active',        tab === 'edit');
+    document.getElementById('btn-submissions').classList.toggle('active', tab === 'submissions');
+    document.getElementById('page-title').textContent = tab === 'edit' ? 'Edit data' : 'Submissions';
+  }
+
+  function switchEntity(entity) {
+    document.getElementById('entity-sites').style.display   = entity === 'sites'   ? '' : 'none';
+    document.getElementById('entity-raters').style.display  = entity === 'raters'  ? '' : 'none';
+    document.getElementById('etab-sites').classList.toggle('active',  entity === 'sites');
+    document.getElementById('etab-raters').classList.toggle('active', entity === 'raters');
+  }
+
+  const drawerForms = {
+    site: (name) => `
+      <div class="field-group">
+        <label class="field-label" for="site-name">Site name</label>
+        <input id="site-name" type="text" placeholder="e.g. Alice" value="${name || ''}" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="site-id">Site ID</label>
+        <input id="site-id" type="text" placeholder="e.g. site_003" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="site-location">Location</label>
+        <input id="site-location" type="text" placeholder="City, State" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="site-status">Status</label>
+        <select id="site-status">
+          <option>Active</option>
+          <option>Inactive</option>
+        </select>
+      </div>
+    `,
+    rater: (name) => `
+      <div class="field-group">
+        <label class="field-label" for="rater-name">Full name</label>
+        <input id="rater-name" type="text" placeholder="e.g. J. Marsh" value="${name || ''}" />
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="rater-site">Site</label>
+        <select id="rater-site">
+          <option>Riverside Clinic</option>
+          <option>Northgate Center</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="rater-role">Role</label>
+        <select id="rater-role">
+          <option>Primary rater</option>
+          <option>Secondary rater</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="rater-email">Email</label>
+        <input id="rater-email" type="email" placeholder="rater@example.com" />
+      </div>
+    `,
+  };
+
+  function openDrawer(mode, type, name) {
+    const label = mode === 'add' ? 'Add' : 'Edit';
+    document.getElementById('drawer-title').textContent = `${label} ${type}`;
+    document.getElementById('drawer-body').innerHTML = drawerForms[type](name);
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('overlay').classList.add('open');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('overlay').classList.remove('open');
+  }
+</script>
+
+{% endblock %}
