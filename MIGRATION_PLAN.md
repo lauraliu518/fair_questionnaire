@@ -91,19 +91,24 @@ Do this before either person goes deep. Nothing else parallelizes well without i
    addSite  / updateSite  / deleteSite   (admin only)
    ```
 
-2. **Agree on submission JSON shape** — reuse what `housekeeping.html` already builds:
+2. **Agree on submission JSON shape**
 
    ```json
-   {
-     "submitted_at": "...",
-     "name": "",
-     "data": {
-       "q1": { ... },
-       "maltreatment_category": { ... },
-       "medical_form": { ... },
-       "housekeeping": { ... }
-     }
-   }
+{
+  "submitted_at": "",
+  "name": "",
+  "rater1": "",
+  "rater2": "",
+  "date": "",
+  "site": "",
+  "case_number": "",
+  "maltreatment_type": "",
+  "hard_case": "",
+  "why_hard_case": "",
+  "why_hard_case_other": "",
+  "medical_provider": "",
+  "responses": {}
+}
    ```
 
 3. **Agree on page routing:**
